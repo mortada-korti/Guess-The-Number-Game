@@ -60,7 +60,6 @@ function App() {
 
   const handleClick = (key) => {
     if (guessed) {
-      // setScreen([]);
       reset();
       setGuessed(false);
     }
@@ -76,13 +75,11 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(secretNumber);
     if (guessed) {
       setResults((prevResults) => [...prevResults, screen]);
     }
     if (attempts === 0) {
       setLostGame(true);
-      console.log("lost");
     }
   }, [screen, guessed, keys, secretNumber]);
 
@@ -92,7 +89,6 @@ function App() {
     setKeys((prevKeys) =>
       prevKeys.map((prevKey) => ({ ...prevKey, isHeld: false }))
     );
-    console.log(wonGame);
   };
 
   const guess = () => {
@@ -138,10 +134,9 @@ function App() {
       setResults([]);
       reset();
       setLevel((prevLevel) => prevLevel + 1);
-      setAttempts((prevAttempts) => prevAttempts + 3);
+      setAttempts((prevAttempts) => prevAttempts + 5);
       setSecretNumber(generateSecretNumber(level + 1));
     } else {
-      console.log("congratz");
       setWonGame(true);
     }
   };
