@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+
+:root {
+    /* Theme 1 */
+    --main-bg-1: hsl(222, 26%, 31%);
+    --toggle-bg-1: hsl(223, 31%, 20%);
+    --screen-bg-1:  hsl(224, 36%, 15%);
+    --key-blue-bg-1: hsl(225, 21%, 49%);
+    --key-blue-shadow-1: hsl(224, 28%, 35%);
+    --key-red-bg-1: hsl(6, 63%, 50%);
+    --key-red-shadow-1: hsl(6, 70%, 34%);
+    --key-gray-bg-1:  hsl(30, 25%, 89%);
+    --key-gray-shadow-1:  hsl(28, 16%, 65%);
+    --gray-text-1: hsl(60, 10%, 19%);
+
+    /* Theme 2 */
+    --main-bg-2: hsl(0, 0%, 90%);
+    --toggle-bg-2: hsl(0, 5%, 81%);
+    --screen-bg-2: hsl(0, 0%, 93%);
+    --key-blue-bg-2: hsl(185, 42%, 37%);
+    --key-blue-shadow-2:   hsl(185, 58%, 25%);
+    --key-red-bg-2: hsl(25, 98%, 40%);
+    --key-red-shadow-2:  hsl(25, 99%, 27%);
+    --key-gray-bg-2:  hsl(45, 7%, 89%);
+    --key-gray-shadow-2:  hsl(35, 11%, 61%);
+    --gray-text-2:  hsl(60, 10%, 19%);
+}
+.App {
+    font-family: 'League Spartan', sans-serif;
+    min-height: 100vh;
+    background-color: var(--main-bg-2);
+    color: var(--gray-text-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: 32px;
+}
+.App.dark {
+    background-color: var(--main-bg-1);
+    color: white;
+}
+
+.App .main {
+    width: 500px;
+    position: relative;
+}
+.App .main--head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+.App .head--title {
+    color: var(--gray-text-2);
+}
+.App.dark .head--title {
+    color: white;
+}
+.App .results {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--screen-bg-2);
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+}
+.App.dark .results {
+    background-color: var(--screen-bg-1);
+}
+.App .results div.correct {
+    color: green;
+}
+.App .results div.semi-correct {
+    color: orange;
+}
+.App .theme--toggle {
+    background-color: var(--toggle-bg-2);
+    width: 50px;
+    height: 20px;
+    border-radius: 50px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.App.dark .theme--toggle {
+    background-color: var(--toggle-bg-1);
+}
+.App .toggle--circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    background-color: var(--key-red-shadow-2);
+}
+.App.dark .toggle--circle {
+    left: 5px;
+    background-color: var(--key-red-bg-1);
+}
+.App .main--screen {
+    background-color: hsl(0deg 5% 86%);
+    font-size: 50px;
+    font-weight: bold;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 20px;
+    color: var(--gray-text-2);
+}
+.App.dark .main--screen {
+    color: white;
+}
+.App .main--screen .correct {
+    color: green;
+}
+.App .main--screen .semi-correct {
+    color: orange;
+}
+.App .main--screen .wrong {
+    color: red;
+}
+.App.dark .main--screen {
+    background-color: var(--screen-bg-1);
+    font-size: 50px;
+    font-weight: bold;
+}
+.App .main--keys {
+    font-weight: bold;
+    background-color: var(--toggle-bg-2);
+}
+.App.dark .main--keys {
+    font-weight: bold;
+    background-color: var(--toggle-bg-1);
+}
+.App .main--keys .numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.App .main--keys .numbers > button {
+    border: none;
+    background-color: var(--key-gray-bg-2);
+    color:var(--gray-text-2);
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+    width: 30%;
+    box-shadow: 0px 4px 0px var(--key-gray-shadow-2);
+    color: var(--gray-text-2);
+}
+.App .main--keys .numbers > button:disabled {
+    background-color: hsl(0deg 0% 72%);
+    cursor: not-allowed;
+}
+.App.dark .main--keys .numbers > button:disabled {
+    background-color: hsl(30deg 4% 53%);
+    cursor: not-allowed;
+}
+.App.dark .main--keys .numbers > button {
+    background-color: var(--key-gray-bg-1);
+    color:var(--gray-text-1);
+    box-shadow: 0px 4px 0px var(--key-gray-shadow-1);
+}
+.App .keys--controls {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 25px;
+}
+.App .keys--controls > button {
+    text-align: center;
+    background-color: var(--key-gray-bg-2);
+    color:var(--gray-text-2);
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+    color: white;
+    width: 40%;
+    border:  none;
+}
+.App .keys--controls > button {
+    background-color: var(--key-gray-bg-1);
+    color: white;
+}
+.App .keys--controls > button.next-btn {
+    background-color: #0998ab;
+    box-shadow: 0px 4px 0px hsl(187deg 62% 26%);
+    color: white;
+}
+.App.dark .keys--controls > button.next-btn {
+    background-color: #007b8b;
+    box-shadow: 0px 4px 0px hsl(187deg 96% 39%);
+    color: white;
+}
+.App .keys--controls > button.guess-again-btn {
+    background-color: hsl(262deg 69% 61%);
+    box-shadow: 0px 4px 0px #5b2fa9;
+    color: white;
+}
+.App.dark .keys--controls > button.guess-again-btn {
+    background-color: hsl(262deg 54% 46%);
+    box-shadow: 0px 4px 0px #894fef;
+    color: white;
+}
+.App .keys--controls > button.play-again-btn {
+    background-color: hsl(122deg 87% 29%);
+    box-shadow: 0px 4px 0px #0e7412;
+    color: white;
+}
+.App .keys--controls .control--reset {
+    background-color: var(--key-blue-bg-2);
+    box-shadow: 0px 4px 0px var(--key-blue-shadow-2);
+}
+.App .keys--controls .control--reset:disabled {
+    background-color: #759eb1;
+    box-shadow: 0px 4px 0px hsl(199deg 24% 40%);
+    cursor: not-allowed;
+}
+.App.dark .keys--controls .control--reset {
+    background-color: var(--key-blue-bg-1);
+    box-shadow: 0px 4px 0px var(--key-blue-shadow-1);
+}
+.App.dark .keys--controls .control--reset:disabled {
+    background-color: hsl(225deg 9% 41%);
+    box-shadow: 0px 4px 0px hsl(224deg 10% 33%);
+    cursor: not-allowed;
+}
+.App .keys--controls .control--guess {
+    background-color: var(--key-red-bg-2);
+    box-shadow: 0px 4px 0px var(--key-red-shadow-2);
+}
+.App .keys--controls .control--guess:disabled {
+    background-color: hsl(25deg 40% 55%);
+    box-shadow: 0px 4px 0px hsl(25deg 60% 40%);
+    cursor: not-allowed;
+}
+.App.dark .keys--controls .control--guess {
+    background-color: var(--key-red-bg-1);
+    box-shadow: 0px 4px 0px var(--key-red-shadow-1);
+}
+.App.dark .keys--controls .control--guess:disabled {
+    background-color: hsl(6deg 17% 43%);
+    box-shadow: 0px 4px 0px hsl(6deg 3% 28%);
+    cursor: not-allowed;
+}
