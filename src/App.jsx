@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [darkMode, setDarkmode] = useState(true);
-  const [level, setLevel] = useState(9);
+  const [level, setLevel] = useState(1);
   const [screen, setScreen] = useState([]);
   const [keys, setKeys] = useState(Keys);
   const [results, setResults] = useState([]);
@@ -179,7 +179,7 @@ function App() {
             })}
         </div>
         <div className="main--head py-3">
-          {!lostGame && !wonGame &&(
+          {!lostGame && !wonGame && (
             <>
               <h3 className="head--title">Level: {level}</h3>
               <h3 className="head--title">Attempts: {attempts}</h3>
