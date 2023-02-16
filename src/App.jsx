@@ -134,7 +134,7 @@ function App() {
       setResults([]);
       reset();
       setLevel((prevLevel) => prevLevel + 1);
-      setAttempts((prevAttempts) => prevAttempts + 5);
+      setAttempts((prevAttempts) => prevAttempts + 3);
       setSecretNumber(generateSecretNumber(level + 1));
     } else {
       setWonGame(true);
